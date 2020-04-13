@@ -35,6 +35,20 @@ The log of the prediction is as below
 - `minikube start`
 
 5. Deploy the cluster online
+
+- sudo apt-get update && sudo apt-get install -y apt-transport-https
+- curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+- echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+- sudo apt-get update
+- sudo apt-get install -y kubectl
 - run `bash run_kubenetes.sh`
 
 6. 
+
+
+Reference
+-https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
+-https://medium.com/faun/deploying-kubernetes-on-aws-aws-eks-and-exploring-load-balanced-containers-8e3798628102
+-https://www.youtube.com/watch?time_continue=3&v=97n9vWV3VcU
+-https://github.com/gashirar/eks-kubectl-settings-for-cloud9
+-https://dev.classmethod.jp/articles/execute-aws-cli-with-iam-role-on-cloud9/
