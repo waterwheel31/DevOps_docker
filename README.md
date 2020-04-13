@@ -26,29 +26,39 @@ The log of the prediction is as below
 3. Update the Docker Image
 
 - Go to ECR, and create a repository (if not exist)
-- Retrieve an authentication token and authenticate the Docker client
-- Paste and run the token on the command line to certificate
+- Retrieve an authentication token and authenticate the Docker client  `aws ecr get-login --no-include-email --region
+ us-east-1`
+- Paste and run the token on the command line to certificate (long token, copy and paste)
 - run `bash upload_docker.sh`
 
 4. Configure Kubernetes to run locally
-
-- `minikube start`
+- Setup minikube
+   -  install from here https://kubernetes.io/docs/tasks/tools/install-minikube/
+   - `minikube start` (for Windows10, not on bash, but on PowerShell)
+   - `minikube stop` 
+- To check: `kubectl config view` 
 
 5. Deploy the cluster online
 
-- sudo apt-get update && sudo apt-get install -y apt-transport-https
-- curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-- echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-- sudo apt-get update
-- sudo apt-get install -y kubectl
-- run `bash run_kubenetes.sh`
+- Setup kubectl 
+   - sudo apt-get update && sudo apt-get install -y apt-transport-https
+   - curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+   - echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+   - sudo apt-get update
+   - sudo apt-get install -y kubectl
+- Run `bash run_kubenetes.sh` to run kubernetes cluster (this may take several minutes)
 
-6. 
+6. Make prediction
+   - - Run `make_prediciton.sh` on another terminal. Results are following
+
+NAME                            READY   STATUS    RESTARTS   AGE
+udacity-kube7-8fc55f594-8b792   1/1     Running   0          4m51s
+step4
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[20.35373177134412]
 
 
-Reference
--https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
--https://medium.com/faun/deploying-kubernetes-on-aws-aws-eks-and-exploring-load-balanced-containers-8e3798628102
--https://www.youtube.com/watch?time_continue=3&v=97n9vWV3VcU
--https://github.com/gashirar/eks-kubectl-settings-for-cloud9
--https://dev.classmethod.jp/articles/execute-aws-cli-with-iam-role-on-cloud9/

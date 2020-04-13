@@ -17,7 +17,7 @@ echo "Docker ID and Image: $dockerpath"
 # Push image to a docker repository
 
 # Tag
-docker tag app:latest 238254733520.dkr.ecr.us-east-1.amazonaws.com/udacity:latest
+docker tag app:latest sihaiweijia/udacity:latest
 
 # Push 
-docker push 238254733520.dkr.ecr.us-east-1.amazonaws.com/udacity:latest
+docker push sihaiweijia/udacity:latest

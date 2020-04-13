@@ -1,0 +1,11 @@
+NAME                            READY   STATUS    RESTARTS   AGE
+udacity-kube7-8fc55f594-8b792   1/1     Running   0          4m51s
+step4
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+
+JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[20.35373177134412]
