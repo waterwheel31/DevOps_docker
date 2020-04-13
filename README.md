@@ -2,6 +2,8 @@
 Repository used for docker project of Udacity Cloud DevOps Nanodegree.
 
 
+[![CircleCI](https://circleci.com/gh/waterwheel31/DevOps_docker.svg?style=svg)](https://circleci.com/gh/waterwheel31/DevOps_docker)
+
 ## Steps 
 
 1. Make the `Dockerfle`
@@ -51,6 +53,7 @@ The log of the prediction is as below
 6. Make prediction
    - - Run `make_prediciton.sh` on another terminal. Results are following
 
+<kubernetes_out.txt>
 NAME                            READY   STATUS    RESTARTS   AGE
 udacity-kube7-8fc55f594-8b792   1/1     Running   0          4m51s
 step4
